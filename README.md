@@ -1,3 +1,3 @@
-# analytics-tcc
+# notebooks-tcc 
 
 Some analyzes for my final work
