@@ -11905,7 +11905,7 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Apresenta&#231;&#227;o">Apresenta&#231;&#227;o<a class="anchor-link" href="#Apresenta&#231;&#227;o">&#182;</a></h1><h4 id="Gabriel-Franco">Gabriel Franco<a class="anchor-link" href="#Gabriel-Franco">&#182;</a></h4><h4 id="Orientadores:-Marcos-Ribeiro-e-Giovanni-Comarela">Orientadores: Marcos Ribeiro e Giovanni Comarela<a class="anchor-link" href="#Orientadores:-Marcos-Ribeiro-e-Giovanni-Comarela">&#182;</a></h4>
+<h1 id="Utiliza&#231;&#227;o-de-minera&#231;&#227;o-de-dados-para-propor-m&#233;tricas-de-avalia&#231;&#227;o-de-jogadores-de-DOTA2">Utiliza&#231;&#227;o de minera&#231;&#227;o de dados para propor m&#233;tricas de avalia&#231;&#227;o de jogadores de DOTA2<a class="anchor-link" href="#Utiliza&#231;&#227;o-de-minera&#231;&#227;o-de-dados-para-propor-m&#233;tricas-de-avalia&#231;&#227;o-de-jogadores-de-DOTA2">&#182;</a></h1><h4 id="Gabriel-Franco">Gabriel Franco<a class="anchor-link" href="#Gabriel-Franco">&#182;</a></h4><h4 id="Orientadores:-Marcos-Ribeiro-e-Giovanni-Comarela">Orientadores: Marcos Ribeiro e Giovanni Comarela<a class="anchor-link" href="#Orientadores:-Marcos-Ribeiro-e-Giovanni-Comarela">&#182;</a></h4>
 </div>
 </div>
 </div></section></section><section><section>
@@ -12059,7 +12059,18 @@ a.anchor-link {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>Essa primeira abordagem foi descartada depois de um tempo. O principal motivo é a falta de estudos e conhecimento prévio a cerca do problema, que não permite confiança nos modelos de análise de eficiência, como é utilizado no contexto do basquetebol pelo Pedro.</li>
+<li>Foi nessa parte que a base de dados foi montada e algumas análises preliminares foram feitas</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Essa primeira abordagem foi descartada. O principal motivo é a falta de estudos e conhecimento prévio a cerca do problema, que não permite confiança nos modelos de análise de eficiência, como é utilizado no contexto do basquetebol pelo Pedro.</li>
 </ul>
 
 </div>
@@ -12146,16 +12157,16 @@ a.anchor-link {
 <h3 id="M&#233;todos">M&#233;todos<a class="anchor-link" href="#M&#233;todos">&#182;</a></h3>
 </div>
 </div>
-</div><div class="fragment">
+</div></section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><img src="data/Workflow.png" alt="title"></p>
-<div align="center"><b><h4>Imagem 1 - Workflow</h4></b></div>
+<div align="center"><b><h4>Figura 1 - Workflow</h4></b></div>
 </div>
 </div>
-</div></div></section></section><section><section>
+</div></section></section><section><section>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
@@ -12168,7 +12179,331 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Escrever-resultados-aqui">Escrever resultados aqui<a class="anchor-link" href="#Escrever-resultados-aqui">&#182;</a></h3>
+<h3 id="Nomenclatura-utilizada-nos-experimentos">Nomenclatura utilizada nos experimentos<a class="anchor-link" href="#Nomenclatura-utilizada-nos-experimentos">&#182;</a></h3>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<table>
+<thead><tr>
+<th style="text-align:center">Nome do experimento</th>
+<th style="text-align:center">Atributos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">kda</td>
+<td style="text-align:center">"kills", "deaths", "assists"</td>
+</tr>
+<tr>
+<td style="text-align:center">all</td>
+<td style="text-align:center">"kills", "deaths", "assists", "denies", "gpm", "hd", "hh", "lh", "xpm"</td>
+</tr>
+<tr>
+<td style="text-align:center">kills</td>
+<td style="text-align:center">"kills"</td>
+</tr>
+<tr>
+<td style="text-align:center">deaths</td>
+<td style="text-align:center">"deaths"</td>
+</tr>
+<tr>
+<td style="text-align:center">assists</td>
+<td style="text-align:center">"assists"</td>
+</tr>
+<tr>
+<td style="text-align:center">denies</td>
+<td style="text-align:center">"denies"</td>
+</tr>
+<tr>
+<td style="text-align:center">gpm</td>
+<td style="text-align:center">"gpm"</td>
+</tr>
+<tr>
+<td style="text-align:center">hh</td>
+<td style="text-align:center">"hh"</td>
+</tr>
+<tr>
+<td style="text-align:center">hd</td>
+<td style="text-align:center">"hd"</td>
+</tr>
+<tr>
+<td style="text-align:center">lh</td>
+<td style="text-align:center">"lh"</td>
+</tr>
+<tr>
+<td style="text-align:center">xpm</td>
+<td style="text-align:center">"xpm"</td>
+</tr>
+</tbody>
+</table>
+<div align="center"><b><h4>Tabela 2 - Experimentos realizados e os atributos utilizados em cada um deles</h4></b></div>
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Tem-alguma-coisa-errada-nisso...">Tem alguma coisa errada nisso...<a class="anchor-link" href="#Tem-alguma-coisa-errada-nisso...">&#182;</a></h3>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="data/assists-corr_pie.png" alt="title"></p>
+<div align="center"><b><h4>Figura 2 - Clusters com o experimento "assists-corr" utilizando o k-means com $k = [3, 4, 5]$</h4></b></div>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="An&#225;lise-do-melhor-valor-de-k-para-o-k-means">An&#225;lise do melhor valor de k para o k-means<a class="anchor-link" href="#An&#225;lise-do-melhor-valor-de-k-para-o-k-means">&#182;</a></h3>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="data/inertia_x_k.png" alt="title"></p>
+<div align="center"><b><h4>Figura 3 - Gráfico da inércia x $k$, com $k = [3,...,100]$</h4></b></div>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Poda-de-outliers">Poda de outliers<a class="anchor-link" href="#Poda-de-outliers">&#182;</a></h3>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="data/boxplot.png" alt="title"></p>
+<div align="center"><b><h4>Figura 4 - Exemplo do IQR para uma distribuição normal. Fonte: 
+<a href="https://pt.wikipedia.org/wiki/Amplitude_interquartil">Wikipedia</a>. Acesso em 04/04/2018</h4></b></div>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Sum&#225;rio-da-poda-de-outliers">Sum&#225;rio da poda de outliers<a class="anchor-link" href="#Sum&#225;rio-da-poda-de-outliers">&#182;</a></h4><p>Número de outliers:</p>
+<ul>
+<li>$2862$  </li>
+</ul>
+<p>Número de outliers em $\{1, ..., 9\}$ atributos:</p>
+<ul>
+<li>$\{2463, 307, 64, 19, 8, 1, 0, 0, 0\}$</li>
+</ul>
+<p>Número de outliers por atributo:</p>
+<ul>
+<li>$kills: 237$</li>
+<li>$deaths: 397$  </li>
+<li>$assists: 392$  </li>
+<li>$denies: 437$  </li>
+<li>$gpm: 56$  </li>
+<li>$hd: 563$  </li>
+<li>$hh: 1177$ </li>
+<li>$lh: 85$  </li>
+<li>$xpm: 47$  </li>
+</ul>
+
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="An&#225;lise-da-correla&#231;&#227;o-e-da-distribui&#231;&#227;o-dos-atributos">An&#225;lise da correla&#231;&#227;o e da distribui&#231;&#227;o dos atributos<a class="anchor-link" href="#An&#225;lise-da-correla&#231;&#227;o-e-da-distribui&#231;&#227;o-dos-atributos">&#182;</a></h3>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="data/scatter_matrix_manual.png" alt="title"></p>
+<div align="center"><b><h4>Figura 5 - Scatter Matrix</h4></b></div>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<table>
+<thead><tr>
+<th style="text-align:center">Nome do experimento</th>
+<th style="text-align:center">Atributos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">kills-corr</td>
+<td style="text-align:center">"kills", "assists", "deaths", "hh", "gpm"</td>
+</tr>
+<tr>
+<td style="text-align:center">deaths-corr</td>
+<td style="text-align:center">"deaths", "hh", "hd", "gpm", "assists"</td>
+</tr>
+<tr>
+<td style="text-align:center">assists-corr</td>
+<td style="text-align:center">"assists", "kills", "gpm", "lh", "xpm"</td>
+</tr>
+<tr>
+<td style="text-align:center">denies-corr</td>
+<td style="text-align:center">"denies", "assists", "gpm", "hh", "deaths"</td>
+</tr>
+<tr>
+<td style="text-align:center">gpm-corr</td>
+<td style="text-align:center">"gpm", "assists", "hh", "deaths", "denies"</td>
+</tr>
+<tr>
+<td style="text-align:center">hh-corr</td>
+<td style="text-align:center">"hh", "deaths", "gpm", "hd", "xpm"</td>
+</tr>
+<tr>
+<td style="text-align:center">hd-corr</td>
+<td style="text-align:center">"hd", "deaths", "hh", "assists", "gpm"</td>
+</tr>
+<tr>
+<td style="text-align:center">lh-corr</td>
+<td style="text-align:center">"lh", "assists", "deaths", "gpm", "hh"</td>
+</tr>
+<tr>
+<td style="text-align:center">xpm-corr</td>
+<td style="text-align:center">"xpm", "assists", "deaths" ,"gpm", "hh"</td>
+</tr>
+</tbody>
+</table>
+<div align="center"><b><h4>Tabela 3 - Experimentos utilizando correlação realizados e os atributos utilizados em cada um deles</h4></b></div>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="Clusteriza&#231;&#227;o">Clusteriza&#231;&#227;o<a class="anchor-link" href="#Clusteriza&#231;&#227;o">&#182;</a></h3>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="data/all_pie.png" alt="title"></p>
+<div align="center"><b><h4>Figura 6 - Clusters com o experimento "all" utilizando o k-means com $k = [3, 4, 5, 10]$</h4></b></div>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="data/inertia-wo.png" alt="title"></p>
+<div align="center"><b><h4>Figura 7 - Inércia para cada experimento</h4></b></div>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="data/silhouette_score-wo.png" alt="title"></p>
+<div align="center"><b><h4>Figura 8 - Coeficiente de silhueta médio para cada experimento</h4></b></div>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="data/silhouette_score_all_10.png" alt="title"></p>
+<div align="center"><b><h4>Figura 9 - Valores do coeficiente de silhueta de cada jogador por cluster utilizando o experimento "all" com $k = 10$</h4></b></div>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="An&#225;lise-dos-contr&#243;ides">An&#225;lise dos contr&#243;ides<a class="anchor-link" href="#An&#225;lise-dos-contr&#243;ides">&#182;</a></h3>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="data/radar_plot_all_10.png" alt="title"></p>
+<div align="center"><b><h4>Figura 10 - Gráfico de radar dos centróides do experimento "all" com $k = 10$</h4></b></div>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="data/all_3_C1.png" alt="title"></p>
+<div align="center"><b><h4>Figura 11 - Mapa de calor mostrando os atributos de dez jogadores aleatórios e da distância euclidiana com os atributos normalizados de cada um para o centróide utilizando o experimento "all" com $k = 3$</h4></b></div>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="An&#225;lise-de-$f(jogador)-=-\frac{K-+-A}{D}$">An&#225;lise de $f(jogador) = \frac{K + A}{D}$<a class="anchor-link" href="#An&#225;lise-de-$f(jogador)-=-\frac{K-+-A}{D}$">&#182;</a></h3>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="data/f-analysis-pruned.png" alt="title"></p>
+<div align="center"><b><h4>Figura 12 - Valor de $f_{medio} = \frac{\sum_{i=1}^{N} \frac{K_i + A_i}{D_i}}{N}$ em cada experimento </h4></b></div>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="PCA-(Principal-Component-Analysis)">PCA (Principal Component Analysis)<a class="anchor-link" href="#PCA-(Principal-Component-Analysis)">&#182;</a></h3>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="data/Variance.png" alt="title"></p>
+<div align="center"><b><h4>Figura 13 - Variância explicada em cada componente do PCA </h4></b></div>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="data/1st eigenvector_2nd eigenvector.png" alt="title"></p>
+<div align="center"><b><h4>Figura 14 - Gráfico Hexbin utilizando o primeiro e o segundo autovetor encontrado no PCA </h4></b></div>
 </div>
 </div>
 </div></section></section><section><section>
@@ -12247,7 +12582,7 @@ a.anchor-link {
 </tr>
 </tbody>
 </table>
-<div align="center"><b><h4>Tabela X - Cronograma</h4></b></div>
+<div align="center"><b><h4>Tabela 4 - Cronograma</h4></b></div>
 </div>
 </div>
 </div></div></section></section><section><section>
@@ -12264,13 +12599,13 @@ a.anchor-link {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li><a href="https://dota2.gamepedia.com/Dota_2_Wiki">https://dota2.gamepedia.com/Dota_2_Wiki</a>. Acesso em 04/08/2018</li>
+<li><a href="https://dota2.gamepedia.com/Dota_2_Wiki">DOTA2 Wiki</a>. Acesso em 04/08/2018</li>
 </ul>
 <p><strong>Agradecimento especial ao Felipe Dias pela ajuda com o DOTA2</strong></p>
 
 </div>
 </div>
-</div></div></section></section>
+</div>
 </div>
 </div>
 
