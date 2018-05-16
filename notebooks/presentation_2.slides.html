@@ -11916,7 +11916,12 @@ a.anchor-link {
 <h2 id="Sum&#225;rio">Sum&#225;rio<a class="anchor-link" href="#Sum&#225;rio">&#182;</a></h2><ul>
 <li>Contextualizando</li>
 <li>Evolução do trabalho<ul>
-<li>Seleção de atributos com GRASP</li>
+<li>Seleção de atributos com GRASP<br>
+  <strong>1)</strong> O que é GRASP<br>
+  <strong>2)</strong> Modelagem: <em>Set Packing Problem</em><br>
+  <strong>3)</strong> Custo de Inserção da Solução<br>
+  <strong>4)</strong> Penalização de Soluções Inviáveis<br>
+  <strong>5)</strong> Algoritmos  </li>
 <li>Coeficiente de correlação tau de Kendall</li>
 <li>Definição das métricas</li>
 </ul>
@@ -11978,8 +11983,16 @@ a.anchor-link {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="O-que-&#233;-GRASP">O que &#233; GRASP<a class="anchor-link" href="#O-que-&#233;-GRASP">&#182;</a></h4>
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>GRASP (<em>Greedy Randomized Adaptive Search Procedure</em>) é uma meta-heurística que consiste em criar uma solução inicial e apoós isso, efetuar uma busca local para melhorar a qualidade da solução</li>
+<li>GRASP (<em>Greedy Randomized Adaptive Search Procedure</em>) é uma meta-heurística que consiste em criar uma solução inicial e após isso, efetuar uma busca local para melhorar a qualidade da solução</li>
 </ul>
 
 </div>
@@ -12039,13 +12052,69 @@ a.anchor-link {
 
 </div>
 </div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Modelagem:-Set-Packing-Problem">Modelagem: <em>Set Packing Problem</em><a class="anchor-link" href="#Modelagem:-Set-Packing-Problem">&#182;</a></h4>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Consiste em maximizar a métrica de <strong>silhueta</strong> da clusterização dos dados, feita segundo um conjunto $c$ de atributos</li>
+</ul>
+
+</div>
+</div>
 </div></div><div class="fragment">
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>Observe que as iterações são independentes entre si</li>
+<li>Deseja-se encontrar qual é o conjunto $c \subset S$ que maximize a silhueta, onde:<ul>
+<li>$S$ é o conjunto completo, com todos atributos da base</li>
+<li>$tam\_min \leq tam(c) \leq tam\_max$, parâmetros informados pelo usuário</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Ainda, $c$ está sujeito a restrições que consistem em conjuntos de itens que não podem ocorrer simultaneamente na solução do problema</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Dois itens não poderão ocorrer simultaneamente em $c$ se sua métrica de correlação for superior a um limite $th$.</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Nos testes feitos, dois itens $el_{a}$ e $el_{b}$ não poderão ocorrer simultaneamente se $corr(el_{a}, el_{b}) \geq th = 0,75$</li>
 </ul>
 
 </div>
@@ -12056,9 +12125,135 @@ a.anchor-link {
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <ul>
-<li>O GRASP foi modelado para maximizar o coeficiente de silhueta da clusterização, utilizando todas as combinações de $\{3, 4, 5, 6, 7, 8, 9\}$ atributos, com a restrição de que dois atributos com a correlação maior que $0.75$ não podem ficar juntos na solução.</li>
+<li>As restrições produzidas serão conjuntos de pares de atributos que não podem estar presentes simultaneamente numa solução</li>
 </ul>
 
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Além destas restrições há a restrição dos tamanhos máximo e mínimo de uma solução</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>O procedimento de busca local do GRASP penaliza soluções inviáveis de acordo com o número de restrições de pares de conjuntos violadas</li>
+</ul>
+
+</div>
+</div>
+</div></div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>Se a restrição de tamanhos máximo e mínimo for violada, aplica-se a penalidade como se a solução tivesse violado todos os pares de restrições, mais um (objetivo: evitar ao máximo estas soluções)</li>
+</ul>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Custo-de-Inser&#231;&#227;o-na-Solu&#231;&#227;o">Custo de Inser&#231;&#227;o na Solu&#231;&#227;o<a class="anchor-link" href="#Custo-de-Inser&#231;&#227;o-na-Solu&#231;&#227;o">&#182;</a></h4>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>O custo $ C_{ins}(i)$ de inserção de um item $i$ em uma solução é dado por:<br>
+$$C_{ins}(i) = \frac{10 \cdot var(i)}{1 + NR(i)}\nonumber$$<br>
+onde:<ul>
+<li>$var(i)$ é a variância do item (atributo) $i$ na base de dados  </li>
+<li>$NR(i)$ é o número de restrições em que $i$ está envolvido</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Penaliza&#231;&#227;o-de-Solu&#231;&#245;es-Invi&#225;veis">Penaliza&#231;&#227;o de Solu&#231;&#245;es Invi&#225;veis<a class="anchor-link" href="#Penaliza&#231;&#227;o-de-Solu&#231;&#245;es-Invi&#225;veis">&#182;</a></h4>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<ul>
+<li>O custo de uma solução $c$ é composto pela métrica base da silhueta ($sil$) diminuída de um fator de penalidade ($pen$):
+$$C_{sol}(c) = sil(\textit{k-means}(c)) - pen(c)\nonumber$$<br>
+com:<br>
+$$pen(c) = log(1 + NV(c))\nonumber$$  </li>
+<li>sendo $NV(c)$ o número de restrições violadas por $c$ (se limites de tamanho, todas $+1$)</li>
+<li>Quando $NV(c) = 0$, $pen(c) = 0$</li>
+</ul>
+
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h4 id="Algoritmos">Algoritmos<a class="anchor-link" href="#Algoritmos">&#182;</a></h4>
+</div>
+</div>
+</div><div class="fragment">
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="data/algoritmo 1.png" alt="title"></p>
+<div align="center"><b><h4>Figura 1 - GRASP para Seleção de Atributos (*Set Packing Problem*)</h4></b></div>
+</div>
+</div>
+</div></div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="data/algoritmo 2.png" alt="title"></p>
+<div align="center"><b><h4>Figura 2 - GRASP: Procedimento Construtivo</h4></b></div>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="data/algoritmo 3.png" alt="title"></p>
+<div align="center"><b><h4>Figura 3 - GRASP: Busca Local</h4></b></div>
+</div>
+</div>
+</div></section><section>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><img src="data/algoritmo 4.png" alt="title"></p>
+<div align="center"><b><h4>Figura 4 - GRASP: Atualização da Elite</h4></b></div>
 </div>
 </div>
 </div></section><section>
